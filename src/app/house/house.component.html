@@ -1,0 +1,73 @@
+<ul>
+    <li>
+        <h3>Nivas Name</h3>
+        <input type="text" [(ngModel)]="house.name" />
+        <p><b>Nivas Name: </b>{{house.name}}</p>
+    </li>
+
+    <li>
+        <h3>Address</h3>
+        <input type="text" [(ngModel)]="house.address" />
+        <p><b>Address: </b>{{house.address}}</p>
+    </li>
+
+    <li>
+        <h3>Type</h3>
+        <select [(ngModel)]="house.type">
+            <option value="Tenament">Tenament</option>
+            <option value="Flat">Flat</option>
+        </select>
+        <p><b>Type: </b>{{house.type}}</p>
+    </li>
+
+    <li>
+        <h3>Has Lift</h3>
+        <select [(ngModel)]="house.hasLift">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+        <p><b>Has Lift: </b>{{house.hasLift == 'true'? 'Yes' : 'No'}}</p>
+    </li>
+
+    <li>
+        <h3>Has Garden</h3>
+        <select [(ngModel)]="house.hasGarden">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+        <p><b>Has Garden: </b>{{house.hasGarden == 'true'? 'Yes' : 'No'}}</p>
+    </li>
+
+    <li>
+        <h3>Has Pool</h3>
+        <select [(ngModel)]="house.hasPool">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+        <p><b>Has Pool: </b>{{house.hasPool == 'true'? 'Yes' : 'No'}}</p>
+    </li>
+
+    <li>
+        <h3>No. Of Floor</h3>
+        <input type="number" [(ngModel)]="house.noOfFloor" min="0" max="10" />
+        <p><b>No. Of Floor: </b>{{house.noOfFloor}}</p>
+    </li>
+
+    <li>
+        <h3>No. Of Room</h3>
+        <input type="number" [(ngModel)]="house.noOfRoom" min="1" max="4" />
+        <p><b>No. Of Room: </b>{{house.noOfRoom}}</p>
+    </li>
+
+    <li>
+        <h3>No. Of Bath</h3>
+        <input type="number" [(ngModel)]="house.noOfBath" min="1" max="3" />
+        <p><b>No. Of Bath: </b>{{house.noOfBath}}</p>
+    </li>
+
+    <li>
+        <h3>No. Of Car Parking</h3>
+        <input type="number" [(ngModel)]="house.noOfCarParking" min="0" max="3" />
+        <p><b>No. Of Car Parking: </b>{{house.noOfCarParking}}</p>
+    </li>
+</ul>
