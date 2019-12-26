@@ -1,0 +1,20 @@
+<h1>car List</h1>
+<p>Please select any car from below brands to add in your list</p>
+<button (click)="addCar('Honda')">Honda</button>
+<button (click)="addCar('MS')">Maruti Suzuki</button>
+<button (click)="addCar('Hyundai')">Hyundai</button>
+<button (click)="addCar('Ford')">Ford</button>
+<button (click)="addCar('Jeep')">Jeep</button>
+<button (click)="addCar('BMW')">BMW</button>
+<button (click)="addCar('Tata')">Tata Motors</button>
+
+<h2>My Car List</h2>
+<ul *ngIf="carList">
+    <li *ngFor="let car of carList">
+        <h3><b>{{car.name}}</b> (<small>{{car.brand}}</small>)</h3>
+        <p>Number of Cylinder: {{car.noOfCylinder}} Cylinder</p>
+        <p>Fuel Type: {{car.fuelType}}</p>
+        <p>Engine Cubic Capacity: {{car.engineCubicCapacity}} cc</p>
+        <p>Color: {{car.color}}</p>
+    </li>
+</ul>

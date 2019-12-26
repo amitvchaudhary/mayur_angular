@@ -17,3 +17,12 @@ export class House {
     noOfBath: number;
     noOfCarParking: number;
 }
+
+export class Car {
+    name: string;
+    brand: string;
+    noOfCylinder: number;
+    fuelType: string;
+    engineCubicCapacity: number;
+    color: string;
+}
