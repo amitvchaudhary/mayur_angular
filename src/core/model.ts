@@ -20,6 +20,7 @@ export class House {
 
 export class Car {
     name: string;
+    owner: string;
     brand: string;
     noOfCylinder: number;
     fuelType: string;

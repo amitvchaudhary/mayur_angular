@@ -1,20 +1,29 @@
 <h1>car List</h1>
 <p>Please select any car from below brands to add in your list</p>
-<button (click)="addCar('Honda')">Honda</button>
-<button (click)="addCar('MS')">Maruti Suzuki</button>
-<button (click)="addCar('Hyundai')">Hyundai</button>
-<button (click)="addCar('Ford')">Ford</button>
-<button (click)="addCar('Jeep')">Jeep</button>
-<button (click)="addCar('BMW')">BMW</button>
-<button (click)="addCar('Tata')">Tata Motors</button>
+<input type="text" #carOwner placeholder="owner"><br>
+<select name="" #carColor>
+    <option value="blue">Blue</option>
+    <option value="red">Red</option>
+    <option value="silver">Sliver</option>
+</select><br>
+<button (click)="addCar('Honda',carColor.value, carOwner.value)">Honda</button>
+<button (click)="addCar('MS',carColor.value, carOwner.value)">Maruti Suzuki</button>
+<button (click)="addCar('Hyundai',carColor.value, carOwner.value)">Hyundai</button>
+<button (click)="addCar('Ford',carColor.value, carOwner.value)">Ford</button>
+<button (click)="addCar('Jeep',carColor.value, carOwner.value)">Jeep</button>
+<button (click)="addCar('BMW',carColor.value, carOwner.value)">BMW</button>
+<button (click)="addCar('Tata',carColor.value, carOwner.value)">Tata Motors</button>
+<br>
+<button (click)="isCarVisible = !isCarVisible">{{isCarVisible? 'Hide' : 'Show'}} Cars</button>
 
 <h2>My Car List</h2>
-<ul *ngIf="carList">
+<ul *ngIf="isCarVisible">
     <li *ngFor="let car of carList">
         <h3><b>{{car.name}}</b> (<small>{{car.brand}}</small>)</h3>
         <p>Number of Cylinder: {{car.noOfCylinder}} Cylinder</p>
         <p>Fuel Type: {{car.fuelType}}</p>
         <p>Engine Cubic Capacity: {{car.engineCubicCapacity}} cc</p>
-        <p>Color: {{car.color}}</p>
+        <p [ngStyle]="{'color': car.color}">Color: {{car.color}}</p>
+        <p>Owner: {{car.owner}}</p>
     </li>
 </ul>
