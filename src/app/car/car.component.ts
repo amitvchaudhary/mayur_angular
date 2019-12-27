@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/core/model';
+import { CAR_BRAND_LIST } from 'src/core/data';
 
 @Component({
   selector: 'app-car',
@@ -10,10 +11,24 @@ export class CarComponent implements OnInit {
 
   isCarVisible: boolean = false;
   carList: Car[] = [];
+  carBrandList: any = CAR_BRAND_LIST;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addCustomCar(NAME, BRAND, COLOR, OWNER) {
+    const car: Car = new Car();
+    car.name = NAME;
+    car.brand = BRAND;
+    car.owner = OWNER;
+    car.noOfCylinder = 4;
+    car.color = COLOR;
+    car.fuelType = 'Petrol';
+    car.engineCubicCapacity = 1500;
+
+    this.carList.push(car);
   }
 
   addCar(BRAND, color, owner) {
@@ -53,6 +68,10 @@ export class CarComponent implements OnInit {
     }
 
     this.carList.push(car);
+  }
+
+  removeCar(index) {
+    this.carList.splice(index, 1);
   }
 
 }

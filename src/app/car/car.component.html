@@ -1,11 +1,16 @@
 <h1>car List</h1>
 <p>Please select any car from below brands to add in your list</p>
-<input type="text" #carOwner placeholder="owner"><br>
-<select name="" #carColor>
+<input type="text" #carName placeholder="Car Name"><br>
+<input type="text" #carOwner placeholder="Owner Name"><br>
+<select #carBrand>
+    <option *ngFor="let brand of carBrandList" [value]="brand">{{brand}}</option>
+</select><br>
+<select #carColor>
     <option value="blue">Blue</option>
     <option value="red">Red</option>
     <option value="silver">Sliver</option>
 </select><br>
+<button (click)="addCustomCar(carName.value,carBrand.value,carColor.value, carOwner.value)">Add Car</button>
 <button (click)="addCar('Honda',carColor.value, carOwner.value)">Honda</button>
 <button (click)="addCar('MS',carColor.value, carOwner.value)">Maruti Suzuki</button>
 <button (click)="addCar('Hyundai',carColor.value, carOwner.value)">Hyundai</button>
@@ -18,12 +23,13 @@
 
 <h2>My Car List</h2>
 <ul *ngIf="isCarVisible">
-    <li *ngFor="let car of carList">
+    <li *ngFor="let car of carList; let i = index">
         <h3><b>{{car.name}}</b> (<small>{{car.brand}}</small>)</h3>
         <p>Number of Cylinder: {{car.noOfCylinder}} Cylinder</p>
         <p>Fuel Type: {{car.fuelType}}</p>
         <p>Engine Cubic Capacity: {{car.engineCubicCapacity}} cc</p>
         <p [ngStyle]="{'color': car.color}">Color: {{car.color}}</p>
         <p>Owner: {{car.owner}}</p>
+        <button (click)="removeCar(i)">Remove This Car</button>
     </li>
 </ul>
