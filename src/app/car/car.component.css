@@ -1,10 +1,86 @@
-button {margin: 0px 10px}
-ul {margin: 0px; padding: 0px 0px 0px 35px; list-style-type: decimal-leading-zero;}
-ul li {
+input, select, button {
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 5px;
+    margin: 5px 10px;
+}
+
+.form-label {
+    line-height: 30px;
+    padding: 0px 5px;
+    margin: 5px 0px;
+    width: 150px;
     display: inline-block;
-    width: 275px;
-    padding: 15px;
-    margin: 15px;
+}
+
+h2 {
+    margin: 15px 5px 5px 10px;
+    text-align: left;
+}
+
+h2 button {
+    float: right;
+    margin: 0px 10px;
+    height: 25px;
+    line-height: 25px;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+ul li h3 {
+    margin: 5px 0px
+}
+
+ul li p {
+    margin: 0 0 5px 0px
+}
+
+.stock-car {
+    float: left;
+    width: 49%;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #ddd;
     box-sizing: border-box;
-    box-shadow: 0px 0px 10px #ddd;
+}
+
+.stock-car ul li {
+    display: inline-block;
+    width: 265px;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px rgba(16, 0, 255, 0.10)
+}
+
+.stock-car ul li:hover {
+    box-shadow: 0px 0px 10px rgba(16, 0, 255, 0.25);
+    cursor: move;
+}
+
+.production-car {
+    float: right;
+    width: 49%;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #ddd;
+    box-sizing: border-box;
+}
+
+.production-car ul li {
+    display: inline-block;
+    width: 265px;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.10)
+}
+
+.production-car ul li:hover {
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.25);
+    cursor: move;
 }
