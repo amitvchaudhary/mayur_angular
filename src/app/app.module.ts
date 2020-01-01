@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HouseComponent } from './house/house.component';
 import { CarComponent } from './car/car.component';
+import { CarListComponent } from './car-list/car-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HouseComponent,
-    CarComponent
+    CarComponent,
+    CarListComponent
   ],
   imports: [
     BrowserModule,

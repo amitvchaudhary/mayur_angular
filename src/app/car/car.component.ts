@@ -41,7 +41,7 @@ export class CarComponent implements OnInit {
   }
 
   switchCar(SWITCH_TO_LIST, CAR_INDEX) {
-    if(SWITCH_TO_LIST == "production") {
+    if (SWITCH_TO_LIST == "production") {
       if (CAR_INDEX == 0) {
         this.productionCarList.push(this.soldCarList.shift());
       } else {
@@ -66,7 +66,7 @@ export class CarComponent implements OnInit {
   }
 
   switchAllCar(SWITCH_TO_LIST) {
-    if(SWITCH_TO_LIST == "production") {
+    if (SWITCH_TO_LIST == "production") {
       this.productionCarList = this.productionCarList.concat(this.soldCarList);
       this.soldCarList = [];
     } else if (SWITCH_TO_LIST == "stock") {
@@ -76,6 +76,10 @@ export class CarComponent implements OnInit {
       this.soldCarList = this.soldCarList.concat(this.stockCarList);
       this.stockCarList = [];
     }
+  }
+
+  getCar() {
+    console.log('received');
   }
 
   // addCar(BRAND, color, owner) {

@@ -24,23 +24,16 @@
 <!-- <button (click)="isCarVisible = !isCarVisible">{{isCarVisible? 'Hide' : 'Show'}} Cars</button> -->
 
 <div class="car-list">
+    <div *ngIf="stockCarList.length==0">
+        <p>nothing to show</p>
+    </div>
     <div class="stock-car" *ngIf="stockCarList.length > 0">
         <h2>
             Stock Car List
             <button (click)="switchAllCar('sold')">Send All to Sold</button>
             <button (click)="switchCar('sold', 0)">Send to Sold</button>
         </h2>
-        <ul>
-            <li *ngFor="let car of stockCarList; let i = index" title="Send to Sold" (click)="switchCar('sold', i)">
-                <h3><b><u>({{i + 1}})</u> {{car.name}}</b> (<small>{{car.brand}}</small>)</h3>
-                <p>Number of Cylinder: {{car.noOfCylinder}} Cylinder</p>
-                <p>Fuel Type: {{car.fuelType}}</p>
-                <p>Engine Cubic Capacity: {{car.engineCubicCapacity}} cc</p>
-                <p [ngStyle]="{'color': car.color}">Color: {{car.color}}</p>
-                <p>Owner: {{car.owner}}</p>
-                <!-- <button (click)="removeCar(i)">Remove This Car</button> -->
-            </li>
-        </ul>
+        <app-car-list [carList]="stockCarList" (sendCar)="getCar()"></app-car-list>
     </div>
     <div class="production-car" *ngIf="productionCarList.length > 0">
         <h2>
@@ -48,20 +41,7 @@
             <button (click)="switchAllCar('stock')">Send All to Stock</button>
             <button (click)="switchCar('stock', 0)">Send to Stock</button>
         </h2>
-        <ul>
-            <li *ngFor="let car of productionCarList; let i = index" title="Send to Stock"
-                (click)="switchCar('stock', i)">
-                <h3><b>
-                        <ul>({{i + 1}})</ul> {{car.name}}
-                    </b> (<small>{{car.brand}}</small>)</h3>
-                <p>Number of Cylinder: {{car.noOfCylinder}} Cylinder</p>
-                <p>Fuel Type: {{car.fuelType}}</p>
-                <p>Engine Cubic Capacity: {{car.engineCubicCapacity}} cc</p>
-                <p [ngStyle]="{'color': car.color}">Color: {{car.color}}</p>
-                <p>Owner: {{car.owner}}</p>
-                <!-- <button (click)="removeCar(i)">Remove This Car</button> -->
-            </li>
-        </ul>
+        <app-car-list [carList]="productionCarList"></app-car-list>
     </div>
     <div class="sold-car" *ngIf="soldCarList.length > 0">
         <h2>
@@ -69,19 +49,6 @@
             <button (click)="switchAllCar('production')">Send All to Production</button>
             <button (click)="switchCar('production', 0)">Send to Production</button>
         </h2>
-        <ul>
-            <li *ngFor="let car of soldCarList; let i = index" title="Send to Production"
-                (click)="switchCar('production', i)">
-                <h3><b>
-                        <ul>({{i + 1}})</ul> {{car.name}}
-                    </b> (<small>{{car.brand}}</small>)</h3>
-                <p>Number of Cylinder: {{car.noOfCylinder}} Cylinder</p>
-                <p>Fuel Type: {{car.fuelType}}</p>
-                <p>Engine Cubic Capacity: {{car.engineCubicCapacity}} cc</p>
-                <p [ngStyle]="{'color': car.color}">Color: {{car.color}}</p>
-                <p>Owner: {{car.owner}}</p>
-                <!-- <button (click)="removeCar(i)">Remove This Car</button> -->
-            </li>
-        </ul>
+        <app-car-list [carList]="soldCarList"></app-car-list>
     </div>
 </div>
