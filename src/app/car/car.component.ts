@@ -12,6 +12,7 @@ export class CarComponent implements OnInit {
   carBrandList: any = CAR_BRAND_LIST;
   stockCarList: Car[] = [];
   productionCarList: Car[] = [];
+  soldCarList: Car[] = [];
 
   constructor() { }
 
@@ -42,10 +43,10 @@ export class CarComponent implements OnInit {
   switchCar(SWITCH_TO_LIST, CAR_INDEX) {
     if(SWITCH_TO_LIST == "production") {
       if (CAR_INDEX == 0) {
-        this.productionCarList.push(this.stockCarList.shift());
+        this.productionCarList.push(this.soldCarList.shift());
       } else {
-        this.productionCarList.push(this.stockCarList[CAR_INDEX]);
-        this.stockCarList.splice(CAR_INDEX, 1);
+        this.productionCarList.push(this.soldCarList[CAR_INDEX]);
+        this.soldCarList.splice(CAR_INDEX, 1);
       }
     } else if (SWITCH_TO_LIST == "stock") {
       if (CAR_INDEX == 0) {
@@ -54,6 +55,26 @@ export class CarComponent implements OnInit {
         this.stockCarList.push(this.productionCarList[CAR_INDEX]);
         this.productionCarList.splice(CAR_INDEX, 1);
       }
+    } else if (SWITCH_TO_LIST == "sold") {
+      if (CAR_INDEX == 0) {
+        this.soldCarList.push(this.stockCarList.shift());
+      } else {
+        this.soldCarList.push(this.stockCarList[CAR_INDEX]);
+        this.stockCarList.splice(CAR_INDEX, 1);
+      }
+    }
+  }
+
+  switchAllCar(SWITCH_TO_LIST) {
+    if(SWITCH_TO_LIST == "production") {
+      this.productionCarList = this.productionCarList.concat(this.soldCarList);
+      this.soldCarList = [];
+    } else if (SWITCH_TO_LIST == "stock") {
+      this.stockCarList = this.stockCarList.concat(this.productionCarList);
+      this.productionCarList = [];
+    } else if (SWITCH_TO_LIST == "sold") {
+      this.soldCarList = this.soldCarList.concat(this.stockCarList);
+      this.stockCarList = [];
     }
   }
 

@@ -39,9 +39,16 @@ ul li p {
     margin: 0 0 5px 0px
 }
 
+.car-list {
+    display: inline-block;
+    width: 100%;
+}
+
 .stock-car {
-    float: left;
-    width: 49%;
+    width: 30%;
+    display: inherit;
+    margin-right: 1.5%;
+    vertical-align: top;
     border: 1px solid #e6e6e6;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px #ddd;
@@ -50,7 +57,7 @@ ul li p {
 
 .stock-car ul li {
     display: inline-block;
-    width: 265px;
+    width: 260px;
     padding: 10px;
     margin: 10px;
     box-sizing: border-box;
@@ -63,8 +70,10 @@ ul li p {
 }
 
 .production-car {
-    float: right;
-    width: 49%;
+    width: 30%;
+    margin: 0% 1.5%;
+    display: inherit;
+    vertical-align: top;
     border: 1px solid #e6e6e6;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px #ddd;
@@ -73,7 +82,7 @@ ul li p {
 
 .production-car ul li {
     display: inline-block;
-    width: 265px;
+    width: 260px;
     padding: 10px;
     margin: 10px;
     box-sizing: border-box;
@@ -81,6 +90,31 @@ ul li p {
 }
 
 .production-car ul li:hover {
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.25);
+    cursor: move;
+}
+
+.sold-car {
+    width: 30%;
+    display: inherit;
+    margin-left: 1.5%;
+    vertical-align: top;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #ddd;
+    box-sizing: border-box;
+}
+
+.sold-car ul li {
+    display: inline-block;
+    width: 260px;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.10)
+}
+
+.sold-car ul li:hover {
     box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.25);
     cursor: move;
 }
