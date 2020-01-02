@@ -33,15 +33,7 @@
             <button (click)="switchAllCar('sold')">Send All to Sold</button>
             <button (click)="switchCar('sold', 0)">Send to Sold</button>
         </h2>
-        <app-car-list [carList]="stockCarList" (sendCar)="getCar()"></app-car-list>
-    </div>
-    <div class="production-car" *ngIf="productionCarList.length > 0">
-        <h2>
-            Production Car List
-            <button (click)="switchAllCar('stock')">Send All to Stock</button>
-            <button (click)="switchCar('stock', 0)">Send to Stock</button>
-        </h2>
-        <app-car-list [carList]="productionCarList"></app-car-list>
+        <app-car-list [carList]="stockCarList" [carSendTo]="'sold'" (switchedCar)="swapCar($event)"></app-car-list>
     </div>
     <div class="sold-car" *ngIf="soldCarList.length > 0">
         <h2>
@@ -49,6 +41,14 @@
             <button (click)="switchAllCar('production')">Send All to Production</button>
             <button (click)="switchCar('production', 0)">Send to Production</button>
         </h2>
-        <app-car-list [carList]="soldCarList"></app-car-list>
+        <app-car-list [carList]="soldCarList" [carSendTo]="'production'" (switchedCar)="swapCar($event)"></app-car-list>
+    </div>
+    <div class="production-car" *ngIf="productionCarList.length > 0">
+        <h2>
+            Production Car List
+            <button (click)="switchAllCar('stock')">Send All to Stock</button>
+            <button (click)="switchCar('stock', 0)">Send to Stock</button>
+        </h2>
+        <app-car-list [carList]="productionCarList" [carSendTo]="'stock'" (switchedCar)="swapCar($event)"></app-car-list>
     </div>
 </div>

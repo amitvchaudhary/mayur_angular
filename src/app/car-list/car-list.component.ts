@@ -9,16 +9,22 @@ import { Car } from 'src/core/model';
 export class CarListComponent implements OnInit {
 
   @Input() carList: Car[] = [];
+  @Input() carSendTo: string;
 
-  @Output() sendCar = new EventEmitter();
+  @Output() switchedCar = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  passCar(){
-    this.sendCar.emit(null)
+  switchCar(SWITCH_TO_LIST, INDEX) {
+    debugger
+    let data = {
+      "switchToCar": SWITCH_TO_LIST,
+      "index": INDEX
+    }
+    this.switchedCar.emit(data);
   }
 
 }

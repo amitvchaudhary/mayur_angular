@@ -1,5 +1,5 @@
 <ul>
-    <li *ngFor="let car of carList; let i = index" title="Send to Stock" (click)="switchCar('stock', i)">
+    <li *ngFor="let car of carList; let i = index" title="Send to {{carSendTo | titlecase}}" (click)="switchCar(carSendTo, i)">
         <h3><b><ul>({{i + 1}})</ul> {{car.name}}</b> (<small>{{car.brand}}</small>)</h3>
         <p>Number of Cylinder: {{car.noOfCylinder}} Cylinder</p>
         <p>Fuel Type: {{car.fuelType}}</p>
@@ -7,7 +7,6 @@
         <p [ngStyle]="{'color': car.color}">Color: {{car.color}}</p>
         <p>Owner: {{car.owner}}</p>
         <!-- <button (click)="removeCar(i)">Remove This Car</button> -->
-        <button (click)="passCar()">Pass Car</button>
     </li>
 </ul>
 

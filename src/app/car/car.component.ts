@@ -41,25 +41,31 @@ export class CarComponent implements OnInit {
   }
 
   switchCar(SWITCH_TO_LIST, CAR_INDEX) {
+    console.log(this.stockCarList);
+    console.log(this.soldCarList);
+    console.log(this.productionCarList);
     if (SWITCH_TO_LIST == "production") {
       if (CAR_INDEX == 0) {
         this.productionCarList.push(this.soldCarList.shift());
       } else {
-        this.productionCarList.push(this.soldCarList[CAR_INDEX]);
+        let car: Car = this.soldCarList[CAR_INDEX];
+        this.productionCarList.push(car);
         this.soldCarList.splice(CAR_INDEX, 1);
       }
     } else if (SWITCH_TO_LIST == "stock") {
       if (CAR_INDEX == 0) {
         this.stockCarList.push(this.productionCarList.shift());
       } else {
-        this.stockCarList.push(this.productionCarList[CAR_INDEX]);
+        let car: Car = this.productionCarList[CAR_INDEX];
+        this.stockCarList.push(car);
         this.productionCarList.splice(CAR_INDEX, 1);
       }
     } else if (SWITCH_TO_LIST == "sold") {
       if (CAR_INDEX == 0) {
         this.soldCarList.push(this.stockCarList.shift());
       } else {
-        this.soldCarList.push(this.stockCarList[CAR_INDEX]);
+        let car: Car = this.stockCarList[CAR_INDEX];
+        this.soldCarList.push(car);
         this.stockCarList.splice(CAR_INDEX, 1);
       }
     }
@@ -78,8 +84,8 @@ export class CarComponent implements OnInit {
     }
   }
 
-  getCar() {
-    console.log('received');
+  swapCar(event) {
+    this.switchCar(event['switchToCar'], event['index']);
   }
 
   // addCar(BRAND, color, owner) {
