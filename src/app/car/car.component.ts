@@ -14,9 +14,16 @@ export class CarComponent implements OnInit {
   productionCarList: Car[] = [];
   soldCarList: Car[] = [];
 
-  constructor() { }
+  constructor() {
+    console.log('Car Custructor Called');
+  }
+
+  ngOnChanges() {
+    console.log('Car OnChanges Called');
+  }
 
   ngOnInit() {
+    console.log('Car OnInit Called');
     this.addCustomCar('City 11', 'Honda', 'silver', 'Mayur', 1500);
     this.addCustomCar('Baleno 22', 'Maruti Suzuki', 'blue', 'Aditi', 1200);
     this.addCustomCar('i20 33', 'Hyundai', 'red', 'Hima', 1200);
@@ -41,9 +48,6 @@ export class CarComponent implements OnInit {
   }
 
   switchCar(SWITCH_TO_LIST, CAR_INDEX) {
-    console.log(this.stockCarList);
-    console.log(this.soldCarList);
-    console.log(this.productionCarList);
     if (SWITCH_TO_LIST == "production") {
       if (CAR_INDEX == 0) {
         this.productionCarList.push(this.soldCarList.shift());
