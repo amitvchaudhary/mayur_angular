@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HouseComponent } from './house/house.component';
-import { CarComponent } from './car/car.component';
-import { CarListComponent } from './car-list/car-list.component';
+import { HeroesComponent } from './component/heroes/heroes.component';
+import { HouseComponent } from './component/house/house.component';
+import { CarComponent } from './component/car/car.component';
+import { CarListComponent } from './component/car-list/car-list.component';
+import { AdminModule } from './admin/admin.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { CarListComponent } from './car-list/car-list.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AdminModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
