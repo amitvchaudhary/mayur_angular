@@ -63,7 +63,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "super-demo1:build"
+            "browserTarget": "super-demo1:build",
+            "port": 6700
           },
           "configurations": {
             "production": {
