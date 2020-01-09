@@ -1,16 +1,27 @@
-<!-- <router-outlet></router-outlet> -->
-<h1>{{title | titlecase}}</h1>
-<hr>
-<h3>App Module</h3>
-<app-heroes></app-heroes>
-<!-- <app-house></app-house> -->
-<!-- <app-car></app-car> -->
-<hr>
+<div class="app-header">
+    <h3 class="app-title">
+        <span>Super 6</span>
+    </h3>
+    <ul class="app-menu">
+        <li>
+            <a routerLink="/car">Car</a>
+        </li>
+        <li>
+            <a routerLink="/heroes">Heroes</a>
+        </li>
+        <li>
+            <a routerLink="/house">House</a>
+        </li>
+    </ul>
+</div>
+<div class="app-body">
+    <router-outlet></router-outlet>
+</div>
+
+<!-- <hr>
 <h3>Admin Module</h3>
 <app-admin></app-admin>
 
 <hr>
 <h3>User Module</h3>
-<app-user></app-user>
-
-<hr>
+<app-user></app-user> -->

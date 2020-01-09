@@ -10,6 +10,7 @@ import { CarComponent } from './component/car/car.component';
 import { CarListComponent } from './component/car-list/car-list.component';
 import { AdminModule } from './admin/admin.module';
 import { UserModule } from './user/user.module';
+import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { UserModule } from './user/user.module';
     HeroesComponent,
     HouseComponent,
     CarComponent,
-    CarListComponent
+    CarListComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

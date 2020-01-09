@@ -1,0 +1,43 @@
+.app-header {
+    width: 100%;
+    position: relative;
+    z-index: 11;
+    padding: 0px 15px;
+    box-shadow: 0px 0px 10px 0px #c3c3c3;
+    box-sizing: border-box;
+}
+
+.app-header .app-title {
+    display: inline-block;
+    width: 300px;
+    margin: 0px;
+    line-height: 60px;
+    font-size: 36px;
+}
+
+.app-header .app-menu {
+    display: block;
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.app-header .app-menu li {
+    display: inline-block;
+    padding: 0px 25px;
+    line-height: 60px;
+    font-size: 20px;
+}
+
+.app-header .app-menu li a {
+    text-decoration: none;
+    color: #111;
+}
+
+.app-body {
+    height: calc(100vh - 60px);
+    overflow: auto;
+    padding: 15px 25px;
+    box-sizing: border-box;
+}

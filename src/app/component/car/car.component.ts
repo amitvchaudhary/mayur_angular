@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/core/model';
 import { CAR_BRAND_LIST } from 'src/core/data';
+import { CommonService } from 'src/app/service/common.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-car',
@@ -14,12 +16,18 @@ export class CarComponent implements OnInit {
   productionCarList: Car[] = [];
   soldCarList: Car[] = [];
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     console.log('Car Custructor Called');
   }
 
   ngOnChanges() {
     console.log('Car OnChanges Called');
+  }
+
+  navigateTo(path) {
+    this.router.navigateByUrl(path);
   }
 
   ngOnInit() {

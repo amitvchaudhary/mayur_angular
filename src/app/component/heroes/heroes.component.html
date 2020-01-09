@@ -10,4 +10,10 @@
     <input [(ngModel)]="hero.lastName" placeholder="Last Name"/>
     <em> {{hero.lastName}}</em>
 </p> -->
+<h1>
+    Heroes
+    <button class="nav-button" (click)="navigateTo('car')">View Car</button>
+    <button class="nav-button" (click)="navigateTo('house')">View House</button>
+</h1>
+<hr>
 <p>{{heroInjector}}</p>

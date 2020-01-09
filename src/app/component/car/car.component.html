@@ -1,4 +1,9 @@
-<h1>car List</h1>
+<h1>
+    car List
+    <button class="nav-button" (click)="navigateTo('heroes')">View Heroes</button>
+    <button class="nav-button" (click)="navigateTo('house')">View House</button>
+</h1>
+<hr>
 <p>Please select any car from below brands to add in your list</p>
 <div class="form-label">Car Name: </div><input type="text" #carName placeholder="Car Name"><br>
 <div class="form-label">Car Owner Name: </div><input type="text" #carOwner placeholder="Owner Name"><br>

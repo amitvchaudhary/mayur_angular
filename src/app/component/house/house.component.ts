@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { House } from 'src/core/model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-house',
@@ -21,9 +22,15 @@ export class HouseComponent implements OnInit {
     noOfCarParking: 0
   }
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  navigateTo(path) {
+    this.router.navigateByUrl(path);
   }
 
 }
