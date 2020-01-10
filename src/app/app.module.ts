@@ -25,10 +25,16 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    AdminModule,
-    UserModule
+    // AdminModule,
+    // UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+  constructor() {
+    console.log('App Module Loaded======================================');
+  }
+  
+}

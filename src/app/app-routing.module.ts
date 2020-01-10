@@ -11,6 +11,8 @@ const routes: Routes = [
   { path: 'car', component: CarComponent },
   { path: 'heroes', component: HeroesComponent },
   { path: 'house', component: HouseComponent },
+  { path: "admin", loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: "user", loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
   { path: '**', component: PageNotFoundComponent }
 ];
 

@@ -22,13 +22,13 @@ export class HeroesComponent implements OnInit {
 
   constructor(
     private commonService: CommonService,
-    private userService: UserService,
+    // private userService: UserService,
     private router: Router
   ) { }
 
   ngOnInit() {
     this.heroInjector = this.commonService.getCommonServiceResponse('Heroes Component');
-    console.log(this.userService.getUserServiceResponse('Heroes Component'));
+    // console.log(this.userService.getUserServiceResponse('Heroes Component'));
   }
 
   navigateTo(path) {
